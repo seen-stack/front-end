@@ -1,0 +1,103 @@
+<div class="col-md-4">
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <div class="contact-info">
+      <h3>
+        {{contact.full-name}}
+        <i class="has-tooltip fa fa-close pull-right" data-tooltip-content="Delete Contact" {{action "delete"}}></i>
+      </h3>
+      {{#if isEditing}}
+        {{#em-form model=contact submitButton=false}}
+          {{#if (eq property 'country')}}
+            {{em-select
+              property="country"
+              label="Country"
+              prompt="-select-"
+              content=countries
+              optionValuePath="name"
+              optionLabelPath="name"
+            }}
+          {{else}}
+            {{em-input property=property label=label value=value}}
+          {{/if}}
+          <div class="form-actions">
+            <input
+              type="submit"
+              {{action "save"}}
+              value="Update"
+              disabled={{contact.isntValid}}
+              class="btn btn-success pull-right"
+            >
+            <input
+              type="submit"
+              {{action "cancel"}}
+              value="Cancel"
+              class="btn btn-danger pull-left"
+            >
+          </div>
+        {{/em-form}}
+      {{else}}
+        <p>
+          <small>First Name</small>
+          <i {{action
+                "isEditing"
+                'First Name'
+                'first-name'
+                contact.first-name
+              }}
+              data-tooltip-content="Edit First Name"
+              class="has-tooltip fa fa-pencil pull-right">
+          </i>
+          <br>
+          {{contact.first-name}}
+        </p>
+        <p>
+          <small>Last Name</small>
+          <i
+            {{action
+              "isEditing"
+              'Last Name'
+              'last-name'
+              contact.last-name
+            }}
+            data-tooltip-content="Edit Last Name"
+            class="has-tooltip fa fa-pencil pull-right">
+          </i>
+          <br>
+          {{contact.last-name}}
+        </p>
+        <p>
+          <small>Email</small>
+          <i
+            {{action
+              "isEditing"
+              'Email'
+              'email'
+              contact.email
+            }}
+            data-tooltip-content="Edit Email"
+            class="has-tooltip fa fa-pencil pull-right">
+          </i>
+          <br>
+          {{contact.email}}
+        </p>
+        <p>
+          <small>Country</small>
+          <i
+            {{action
+              "isEditing"
+              'Country'
+              'country'
+              contact.country
+            }}
+            data-tooltip-content="Edit Country"
+            class="has-tooltip fa fa-pencil pull-right">
+          </i>
+          <br>
+          {{contact.country}}
+        </p>
+      {{/if}}
+      </div>
+    </div>
+  </div>
+</div>

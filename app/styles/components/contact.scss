@@ -1,0 +1,30 @@
+.contact-info {
+  height: 310px;
+  overflow-y: auto;
+  > p {
+    font-size: 18px;
+    > small {
+      color: $color-mountain-mist;
+    }
+  }
+  :hover .fa {
+    opacity: 1;
+  }
+  .fa-close {
+    color: $danger;
+  }
+  @media (min-width: 1000px) {
+    .fa {
+      cursor: pointer;
+      opacity: 0;
+      @include transition-property(opacity, 0.2s, ease-in);
+    }
+  }
+  > form {
+    margin-top: 20px;
+  }
+}
+
+#create-contact {
+  min-height: 370px;
+}

@@ -1,7 +1,9 @@
-# Ember-app
+[![Build Status][travis-image]][travis-url]
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+# Address book
+
+Repository for an [address book](http://178.62.193.246) using
+the "seen" stack.
 
 ## Prerequisites
 
@@ -12,6 +14,7 @@ You will need the following things properly installed on your computer.
 * [Bower](http://bower.io/)
 * [Ember CLI](http://www.ember-cli.com/)
 * [PhantomJS](http://phantomjs.org/)
+* [Back end API](https://github.com/seen-stack/back-end)
 
 ## Installation
 
@@ -29,6 +32,10 @@ You will need the following things properly installed on your computer.
 
 Make use of the many generators for code, try `ember help generate` for more details
 
+## Status
+
+Work in progress
+
 ### Running Tests
 
 * `ember test`
@@ -39,10 +46,6 @@ Make use of the many generators for code, try `ember help generate` for more det
 * `ember build` (development)
 * `ember build --environment production` (production)
 
-### Deploying
-
-Specify what it takes to deploy your app.
-
 ## Further Reading / Useful Links
 
 * [ember.js](http://emberjs.com/)
@@ -51,3 +54,5 @@ Specify what it takes to deploy your app.
   * [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
   * [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)
 
+[travis-image]: https://travis-ci.org/seen-stack/front-end.svg?branch=master
+[travis-url]: https://travis-ci.org/seen-stack/front-end

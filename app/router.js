@@ -6,6 +6,11 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
+
+  this.route('addressBook', {path: '/address-book'}, function() {
+    this.route('create', {path: 'create-contact'});
+  });
+
 });
 
 export default Router;
