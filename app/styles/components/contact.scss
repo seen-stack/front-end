@@ -1,6 +1,4 @@
 .contact-info {
-  height: 310px;
-  overflow-y: auto;
   > p {
     font-size: 18px;
     > small {
@@ -25,6 +23,7 @@
   }
 }
 
-#create-contact {
-  min-height: 370px;
+.single-contact {
+  height: 310px;
+  overflow-y: auto;
 }

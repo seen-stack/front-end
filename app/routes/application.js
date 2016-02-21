@@ -20,6 +20,7 @@ export default Ember.Route.extend(api, notifier, {
     * Makes a request to the server in order to log the error
     */
     error(error) {
+      console.log (error)
       this.failNoty('Oops. Something went wrong..');
       let host = this.get('host');
       Ember.$.post(host + '/client-errors?error=' + error.toString());
