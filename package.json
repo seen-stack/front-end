@@ -16,6 +16,9 @@
   "engines": {
     "node": ">= 0.10.0"
   },
+  "pre-commit": [
+    "test"
+  ],
   "author": "",
   "license": "MIT",
   "devDependencies": {
@@ -43,7 +46,8 @@
     "ember-tooltips": "^0.5.8",
     "ember-truth-helpers": "^1.2.0",
     "ember-validations": "0.0.0",
-    "liquid-fire": "^0.23.0"
+    "liquid-fire": "^0.23.0",
+    "pre-commit": "^1.1.2"
   },
   "dependencies": {}
 }
