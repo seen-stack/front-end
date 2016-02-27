@@ -11,8 +11,9 @@ import Ember from 'ember';
 import api from '../../mixins/api';
 import countries from '../../mixins/countries';
 import notifier from '../../mixins/notifier';
+import tooltips from 'ember-tooltips/mixins/components/tooltips';
 
-export default Ember.Component.extend(api, countries, notifier, {
+export default Ember.Component.extend(api, countries, notifier, tooltips, {
 
   /**
   * @public
