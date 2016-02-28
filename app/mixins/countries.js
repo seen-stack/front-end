@@ -2,12 +2,15 @@
  * @author Ivaylo Ivanov
  * @public
  * @description Holds the list of all countries
+ * @extends api
  * @requires ember
+ * @requires ./api
  */
 import Ember from 'ember';
-let countries = [];
+import api from './api';
+const countries = [];
 
-export default Ember.Mixin.create({
+export default Ember.Mixin.create(api, {
 
   /**
   * @public

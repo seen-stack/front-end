@@ -1,3 +1,9 @@
+/**
+ * @author Ivaylo Ivanov
+ * @public
+ * @description Animated transitions between routes
+ */
+
 export default function() {
   const routes = [
     'addressBook',

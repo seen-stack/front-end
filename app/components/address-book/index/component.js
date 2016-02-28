@@ -1,7 +1,7 @@
 /**
  * @author Ivaylo Ivanov
  * @public
- * @description Parent component for all address book components
+ * @description Index page of the address-book
  * @requires ember
  */
 import Ember from 'ember';

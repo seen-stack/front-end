@@ -2,18 +2,19 @@
  * @author Ivaylo Ivanov
  * @public
  * @description Contact component - representation of a single contact
+ * @extends countries
+ * @extends notifier
+ * @extends tooltips
  * @requires ember
- * @requires ../../mixins/api
  * @requires ../../mixins/countries
  * @requires ./../mixins/notifier
  */
 import Ember from 'ember';
-import api from '../../mixins/api';
-import countries from '../../mixins/countries';
-import notifier from '../../mixins/notifier';
+import countries from '../../../mixins/countries';
+import notifier from '../../../mixins/notifier';
 import tooltips from 'ember-tooltips/mixins/components/tooltips';
 
-export default Ember.Component.extend(api, countries, notifier, tooltips, {
+export default Ember.Component.extend(countries, notifier, tooltips, {
 
   /**
   * @public
@@ -58,7 +59,9 @@ export default Ember.Component.extend(api, countries, notifier, tooltips, {
   didInsertElement() {
     let timeout = (this.index + 1) * 300;
     this.$().hide().fadeIn(timeout, () => {
-      this.renderChildTooltips();
+      if (typeof this.$() === 'object') {
+        this.renderChildTooltips();
+      }
     });
   },
 

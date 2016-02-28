@@ -1,47 +1,29 @@
+/**
+ * @author Ivaylo Ivanov
+ * @public
+ * @description Route for creating a new contact
+ * @requires ember
+ */
 import Ember from 'ember';
-import api from '../../mixins/api';
-import countries from '../../mixins/countries';
 
-export default Ember.Route.extend(api, countries, {
+export default Ember.Route.extend({
 
+  /**
+  * @public
+  * @description Page title
+  * @property {string}
+  */
   title: 'Create a contact',
-
-  /**
-  * @public
-  * @description Fired when the user enters the route. Creates a contact empty
-  * model
-  * @returns {object} contact
-  */
-  model() {
-    return this.get('store').createRecord('contact', {
-      'first-name': '',
-      'last-name': '',
-      email: '',
-      country: ''
-    });
-  },
-
-  /**
-  * @public
-  * @description Sets the model and gets all the countries
-  */
-  setupController(controller, model) {
-    controller.set('model', model);
-    this.getCountries()
-    .then(res => {
-      controller.set('countries', res);
-    });
-  },
 
   actions: {
 
     /**
     * @public
-    * @description Fired when the user leaves the route.
-    * Sends an action to the controller to delete the record if it's not saved
+    * @description Fired when the user clicks on the "back" button.
+    * transitionTo "/address-book"
     */
-    willTransition() {
-      this.controllerFor('addressBook.create').send('delete');
+    goBack() {
+      this.transitionTo('addressBook');
     }
 
   }
