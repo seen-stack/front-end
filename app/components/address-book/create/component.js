@@ -55,7 +55,7 @@ export default Ember.Component.extend(countries, notifier, {
   * @description Deletes the model if it's not created or already deleted
   */
   deleteModel() {
-    if (this.get('model').get('id')) {
+    if (!this.get('model').get('isDeleted') && !this.get('model').get('id')) {
       this.get('model').deleteRecord();
     }
   },
